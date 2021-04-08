@@ -1,0 +1,4 @@
+1
+SELECT books.id, count(books_categories.cat_id) as cat_count FROM `books` inner join books_categories on books_categories.book_id=books.id where books.otype='0'  group by books_categories.book_id HAVING cat_count>3;
+2
+select books_categories.book_id as b1, t1.book_id as b2, count(t1.cat_id) as count from books_categories  INNER JOIN books_categories t1 on t1.cat_id=books_categories.cat_id and books_categories.book_id>t1.book_id group by books_categories.book_id HAVING count>=7;
